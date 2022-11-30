@@ -1,8 +1,15 @@
+import Header from './components/Header';
+import AppContainer from './components/AppContainer';
+import styled from '@emotion/styled';
+
 function App() {
   return (
-    <div className=''>
-      <h1>Hello</h1>
-    </div>
+    <>
+      <Header />
+      <AppContainer>
+        <h1>Hola</h1>
+      </AppContainer>
+    </>
   );
 }
 
