@@ -4,6 +4,10 @@ import styled from '@emotion/styled';
 const StyledContainer = styled.div`
   max-width: 50rem;
   margin: 0 auto;
+
+  @media (max-width: 768px) {
+    padding: 0 1rem;
+  }
 `;
 
 type AppContainerProps = {

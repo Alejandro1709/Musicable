@@ -11,11 +11,11 @@ const StyledNav = styled.nav`
   justify-content: space-between;
   align-items: center;
   max-width: 50rem;
-  padding: 0.6rem 0;
+  padding: 0.5rem 0;
   margin: 0 auto;
 
   @media (max-width: 768px) {
-    padding: 0.6rem 1rem;
+    padding: 0.5rem 1rem;
   }
 `;
 
