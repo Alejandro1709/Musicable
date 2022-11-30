@@ -1,34 +1,41 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import './App.css'
+import Header from './components/Header';
+import AppContainer from './components/AppContainer';
+import Collection from './components/Collection';
+import styled from '@emotion/styled';
+
+const StyledSection = styled.section`
+  padding-top: 1rem;
+`;
+
+const StyledHeading = styled.h1`
+  font-size: 2rem;
+
+  @media (max-width: 768px) {
+    font-size: 1.7rem;
+  }
+`;
+
+const StyledTopHeading = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+`;
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <div className="App">
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src="/vite.svg" className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://reactjs.org" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </div>
-  )
+    <>
+      <Header />
+      <AppContainer>
+        <StyledSection>
+          <StyledTopHeading>
+            <StyledHeading>Your Musical Collection</StyledHeading>
+            <input type='text' placeholder='Search an album...' />
+          </StyledTopHeading>
+          <Collection />
+        </StyledSection>
+      </AppContainer>
+    </>
+  );
 }
 
-export default App
+export default App;
