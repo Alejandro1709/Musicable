@@ -1,21 +1,12 @@
 import { ReactNode } from 'react';
-import styled from '@emotion/styled';
-
-const StyledContainer = styled.div`
-  max-width: 50rem;
-  margin: 0 auto;
-
-  @media (max-width: 768px) {
-    padding: 0 1rem;
-  }
-`;
+import * as S from './styles';
 
 type AppContainerProps = {
   children: ReactNode;
 };
 
 function AppContainer({ children }: AppContainerProps) {
-  return <StyledContainer>{children}</StyledContainer>;
+  return <S.Container>{children}</S.Container>;
 }
 
 export default AppContainer;
