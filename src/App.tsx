@@ -16,6 +16,8 @@ function App() {
         <StyledSection>
           <Routes>
             <Route path='/' element={<AlbumsPage />} />
+            <Route path='/albums/:albumSlug' element={<h1>Album Page</h1>} />
+            <Route path='*' element={<h1>404 Page Not Found</h1>} />
           </Routes>
         </StyledSection>
       </AppContainer>
