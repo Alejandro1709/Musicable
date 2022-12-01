@@ -1,4 +1,3 @@
-import React from 'react';
 import Collection from '../components/Collection';
 import styled from '@emotion/styled';
 
