@@ -2,6 +2,11 @@ import styled from '@emotion/styled';
 
 export const Album = styled.article`
   user-select: none;
+  cursor: pointer;
+  transition: all 0.1s ease-in-out;
+  &:hover {
+    transform: scale(1.05);
+  }
 `;
 
 export const AlbumImageCover = styled.div`
