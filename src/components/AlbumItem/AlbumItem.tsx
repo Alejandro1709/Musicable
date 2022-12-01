@@ -1,19 +1,24 @@
 import * as S from './styles';
+import type Album from '../../types/album';
 
-function AlbumItem() {
+type AlbumItemProps = {
+  album: Album;
+};
+
+function AlbumItem({ album }: AlbumItemProps) {
   return (
     <S.Album>
       <S.AlbumImageCover>
         <S.AlbumImage
           src='https://via.placeholder.com/150'
-          alt='Album cover'
+          alt={`The album cover for ${album.albumTitle}`}
           draggable='false'
         />
       </S.AlbumImageCover>
       <S.AlbumInfo>
-        <S.AlbumTitle>Album Title</S.AlbumTitle>
-        <S.AlbumArtist>Artist Name</S.AlbumArtist>
-        <S.AlbumYear>2021</S.AlbumYear>
+        <S.AlbumTitle>{album.albumTitle}</S.AlbumTitle>
+        <S.AlbumArtist>{album.albumAuthor}</S.AlbumArtist>
+        <S.AlbumYear>{album.albumReleaseDate}</S.AlbumYear>
       </S.AlbumInfo>
     </S.Album>
   );
