@@ -11,7 +11,7 @@ function AlbumItem({ album }: AlbumItemProps) {
       <S.Album>
         <S.AlbumImageCover>
           <S.AlbumImage
-            src='https://via.placeholder.com/150'
+            src={album.albumCover || 'https://via.placeholder.com/150'}
             alt={`The album cover for ${album.albumTitle}`}
             draggable='false'
           />
