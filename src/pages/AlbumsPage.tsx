@@ -1,7 +1,6 @@
-import { useState } from 'react';
-import { albums } from '../data/index';
+import { useContext } from 'react';
+import { AlbumContext } from '../context/albumContext';
 import Collection from '../components/Collection';
-import type Album from '../types/album';
 import Input from '../components/Input';
 import styled from '@emotion/styled';
 
@@ -20,16 +19,8 @@ const StyledTopHeading = styled.div`
 `;
 
 function AlbumsPage() {
-  const [initialAlbums, setInitialAlbums] = useState<Album[]>(albums);
-  const [filteredAlbums, setFilteredAlbums] = useState<Album[]>([]);
-
-  const handleFilterChange = (e: any) => {
-    const filtered = albums.filter((album) =>
-      album.albumTitle.toLowerCase().includes(e.target.value.toLowerCase())
-    );
-
-    setFilteredAlbums(filtered);
-  };
+  const { initialAlbums, filteredAlbums, handleFilterChange } =
+    useContext(AlbumContext);
 
   return (
     <>
