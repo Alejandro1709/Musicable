@@ -1,3 +1,4 @@
+import { NavLink as Link } from 'react-router-dom';
 import styled from '@emotion/styled';
 
 export const Header = styled.header`
@@ -23,6 +24,12 @@ export const NavLinks = styled.ul`
   display: flex;
   list-style: none;
   gap: 1rem;
+`;
+
+export const LogoLink = styled(Link)`
+  color: white;
+  cursor: pointer;
+  text-decoration: none;
 `;
 
 export const NavLink = styled.li`
