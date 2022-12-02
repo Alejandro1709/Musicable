@@ -92,7 +92,7 @@ export const albums: Album[] = [
         songLength: '3:03',
       },
     ],
-    albumReleaseDate: '2013-02-05',
+    albumReleaseDate: '2022-10-21',
   },
   {
     id: 4,
@@ -112,6 +112,29 @@ export const albums: Album[] = [
         id: 2,
         songTitle: 'Choker',
         songSlug: 'choker',
+        songLength: '3:23',
+      },
+    ],
+    albumReleaseDate: '2021-05-21',
+  },
+  {
+    id: 5,
+    albumTitle: 'Midnights',
+    albumAuthor: 'Taylor Swift',
+    albumSlug: 'midnights',
+    albumCover:
+      'https://upload.wikimedia.org/wikipedia/en/9/9f/Midnights_-_Taylor_Swift.png',
+    albumSongs: [
+      {
+        id: 1,
+        songTitle: 'Maroon',
+        songSlug: 'maroon',
+        songLength: '3:38',
+      },
+      {
+        id: 2,
+        songTitle: 'Snow at the beach',
+        songSlug: 'snow-at-the-beach',
         songLength: '3:23',
       },
     ],

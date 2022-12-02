@@ -1,4 +1,7 @@
+import { useState } from 'react';
+import { albums } from '../data/index';
 import Collection from '../components/Collection';
+import type Album from '../types/album';
 import styled from '@emotion/styled';
 
 const StyledHeading = styled.h1`
@@ -16,13 +19,28 @@ const StyledTopHeading = styled.div`
 `;
 
 function AlbumsPage() {
+  const [initialAlbums, setInitialAlbums] = useState<Album[]>(albums);
+  const [filteredAlbums, setFilteredAlbums] = useState<Album[]>([]);
+
+  const handleFilterChange = (e: any) => {
+    const filtered = albums.filter((album) =>
+      album.albumTitle.toLowerCase().includes(e.target.value)
+    );
+    setFilteredAlbums(filtered);
+    console.log(filtered);
+  };
+
   return (
     <>
       <StyledTopHeading>
         <StyledHeading>Your Musical Collection</StyledHeading>
-        <input type='text' placeholder='Search an album...' />
+        <input
+          type='text'
+          placeholder='Search an album...'
+          onChange={handleFilterChange}
+        />
       </StyledTopHeading>
-      <Collection />
+      <Collection albums={filteredAlbums} />
     </>
   );
 }
