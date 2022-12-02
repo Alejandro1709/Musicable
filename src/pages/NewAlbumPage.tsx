@@ -1,6 +1,7 @@
+import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
-import styled from '@emotion/styled';
 import Input from '../components/Input';
+import styled from '@emotion/styled';
 
 const StyledNavigator = styled.div`
   display: flex;
@@ -54,6 +55,22 @@ const StyledSubmitButton = styled.button`
 `;
 
 function NewAlbumPage() {
+  const [formData, setFormData] = useState({
+    albumTitle: '',
+    albumAuthor: '',
+    albumReleaseDate: '',
+    albumCover: '',
+  });
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    console.log(formData);
+  };
+
   return (
     <>
       <StyledNavigator>
@@ -61,22 +78,46 @@ function NewAlbumPage() {
         <h1>Add a new Album</h1>
         <StyledLink to='/album/edit'>Rand</StyledLink>
       </StyledNavigator>
-      <StyledForm>
+      <StyledForm onSubmit={handleSubmit}>
         <StyledGroup>
           <label htmlFor='albumTitle'>Album Title</label>
-          <Input id='albumTitle' name='albumTitle' placeholder='Supernova' />
+          <Input
+            id='albumTitle'
+            name='albumTitle'
+            placeholder='Supernova'
+            value={formData.albumTitle}
+            onChange={handleChange}
+          />
         </StyledGroup>
         <StyledGroup>
           <label htmlFor='albumAuthor'>Album Author</label>
-          <Input id='albumAuthor' name='albumAuthor' placeholder='John Doe' />
+          <Input
+            id='albumAuthor'
+            name='albumAuthor'
+            placeholder='John Doe'
+            value={formData.albumAuthor}
+            onChange={handleChange}
+          />
         </StyledGroup>
         <StyledGroup>
           <label htmlFor='albumReleaseDate'>Album Release Date</label>
-          <Input type='date' id='albumReleaseDate' name='albumReleaseDate' />
+          <Input
+            type='date'
+            id='albumReleaseDate'
+            name='albumReleaseDate'
+            value={formData.albumReleaseDate}
+            onChange={handleChange}
+          />
         </StyledGroup>
         <StyledGroup>
           <label htmlFor='albumCover'>Album Cover</label>
-          <Input type='file' id='albumCover' name='albumCover' />
+          <Input
+            id='albumCover'
+            name='albumCover'
+            placeholder='https://...'
+            value={formData.albumCover}
+            onChange={handleChange}
+          />
         </StyledGroup>
         <StyledSubmitButton type='submit'>Add Album</StyledSubmitButton>
       </StyledForm>
