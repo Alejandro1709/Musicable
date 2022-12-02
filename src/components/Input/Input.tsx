@@ -11,7 +11,7 @@ type InputProps = {
   id: string;
   name: string;
   type?: string;
-  placeholder: string;
+  placeholder?: string;
   value?: string | undefined;
   onChange?: (e: any) => void;
 };
