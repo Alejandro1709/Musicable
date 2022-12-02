@@ -1,4 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { AlbumContext } from '../../context/albumContext';
+import Album from '../../types/album';
 import Input from '../Input';
 import * as S from './styles';
 
@@ -10,13 +13,30 @@ function CreateAlbumForm() {
     albumCover: '',
   });
 
+  const { handleCreateAlbum } = useContext(AlbumContext);
+
+  const navigate = useNavigate();
+
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    console.log(formData);
+
+    const newAlbum: Album = {
+      id: Math.floor(Math.random() * 1000),
+      albumTitle: formData.albumTitle,
+      albumAuthor: formData.albumAuthor,
+      albumSlug: formData.albumTitle.toLowerCase().replace(/ /g, '-'),
+      albumReleaseDate: formData.albumReleaseDate,
+      albumCover: formData.albumCover,
+      albumSongs: [],
+    };
+
+    handleCreateAlbum(newAlbum);
+
+    navigate('/');
   };
 
   return (

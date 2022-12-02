@@ -7,6 +7,7 @@ type AlbumContextType = {
   filteredAlbums: Album[];
   setInitialAlbums: React.Dispatch<React.SetStateAction<Album[]>>;
   setFilteredAlbums: React.Dispatch<React.SetStateAction<Album[]>>;
+  handleCreateAlbum: (album: Album) => void;
   handleFilterChange: (e: any) => void;
 };
 
@@ -19,6 +20,7 @@ export const AlbumContext = createContext<AlbumContextType>({
   filteredAlbums: [],
   setInitialAlbums: () => {},
   setFilteredAlbums: () => {},
+  handleCreateAlbum: () => {},
   handleFilterChange: () => {},
 });
 
@@ -27,11 +29,15 @@ function AlbumProvider({ children }: AlbumProviderProps) {
   const [filteredAlbums, setFilteredAlbums] = useState<Album[]>([]);
 
   const handleFilterChange = (e: any) => {
-    const filtered = albums.filter((album) =>
+    const filtered = initialAlbums.filter((album) =>
       album.albumTitle.toLowerCase().includes(e.target.value.toLowerCase())
     );
 
     setFilteredAlbums(filtered);
+  };
+
+  const handleCreateAlbum = (album: Album) => {
+    setInitialAlbums([...initialAlbums, album]);
   };
 
   return (
@@ -42,6 +48,7 @@ function AlbumProvider({ children }: AlbumProviderProps) {
         filteredAlbums,
         setFilteredAlbums,
         handleFilterChange,
+        handleCreateAlbum,
       }}
     >
       {children}
