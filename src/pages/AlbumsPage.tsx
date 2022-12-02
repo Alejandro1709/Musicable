@@ -42,7 +42,9 @@ function AlbumsPage() {
           onChange={handleFilterChange}
         />
       </StyledTopHeading>
-      <Collection albums={filteredAlbums} />
+      <Collection
+        albums={filteredAlbums.length > 0 ? filteredAlbums : initialAlbums}
+      />
     </>
   );
 }
