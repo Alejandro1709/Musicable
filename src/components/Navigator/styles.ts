@@ -23,3 +23,16 @@ export const Link = styled(NavLink)`
     background-color: #e1e1e1;
   }
 `;
+
+export const UnLink = styled(NavLink)`
+  visibility: hidden;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  background-color: #f1f1f1;
+  color: #000;
+
+  &:hover {
+    background-color: #e1e1e1;
+  }
+`;

@@ -1,11 +1,27 @@
 import * as S from './styles';
 
-function Navigator() {
+type NavigatorProps = {
+  backUrl?: string;
+  title: string;
+  rightUrl?: string;
+  rightTitle?: string;
+};
+
+function Navigator({
+  backUrl = '/',
+  title,
+  rightTitle,
+  rightUrl = '/',
+}: NavigatorProps) {
   return (
     <S.Navigator>
-      <S.Link to='/'>Back</S.Link>
-      <h1>Add a new Album</h1>
-      <S.Link to='/album/edit'>Rand</S.Link>
+      <S.Link to={backUrl}>Back</S.Link>
+      <h1>{title}</h1>
+      {rightTitle ? (
+        <S.Link to={rightUrl}>{rightTitle}</S.Link>
+      ) : (
+        <S.UnLink to={rightUrl}>{rightTitle}</S.UnLink>
+      )}
     </S.Navigator>
   );
 }

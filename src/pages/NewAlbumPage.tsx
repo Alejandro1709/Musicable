@@ -4,7 +4,7 @@ import CreateAlbumForm from '../components/CreateAlbumForm';
 function NewAlbumPage() {
   return (
     <>
-      <Navigator />
+      <Navigator title='Add a new Album' />
       <CreateAlbumForm />
     </>
   );
