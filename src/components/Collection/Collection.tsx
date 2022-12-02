@@ -1,5 +1,5 @@
 import AlbumItem from '../AlbumItem';
-import { albums } from '../../data/index';
+import AddAlbumCard from '../AddAlbumCard';
 import type Album from '../../types/album';
 import * as S from './styles';
 
@@ -13,6 +13,7 @@ function Collection({ albums }: CollectionTypes) {
       {albums.map((album) => (
         <AlbumItem key={album.id} album={album} />
       ))}
+      <AddAlbumCard />
     </S.AlbumsGrid>
   );
 }

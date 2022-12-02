@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { albums } from '../data/index';
 import Collection from '../components/Collection';
 import type Album from '../types/album';
-import Input from '../components/Input/Input';
+import Input from '../components/Input';
 import styled from '@emotion/styled';
 
 const StyledHeading = styled.h1`
