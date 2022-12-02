@@ -6,7 +6,8 @@ export const albums: Album[] = [
     albumTitle: 'Blurryface',
     albumAuthor: 'Twenty One Pilots',
     albumSlug: 'blurryface',
-    albumCover: 'https://i.imgur.com/0s3suxY.jpg',
+    albumCover:
+      'https://upload.wikimedia.org/wikipedia/en/7/7d/Blurryface_by_Twenty_One_Pilots.png',
     albumSongs: [
       {
         id: 1,
@@ -40,7 +41,8 @@ export const albums: Album[] = [
     albumTitle: 'Trench',
     albumAuthor: 'Twenty One Pilots',
     albumSlug: 'trench',
-    albumCover: 'https://i.imgur.com/0s3suxY.jpg',
+    albumCover:
+      'https://upload.wikimedia.org/wikipedia/en/f/f3/Trench_Twenty_One_Pilots.png',
     albumSongs: [
       {
         id: 1,
@@ -68,7 +70,8 @@ export const albums: Album[] = [
     albumTitle: 'Vessel',
     albumAuthor: 'Twenty One Pilots',
     albumSlug: 'vessel',
-    albumCover: 'https://i.imgur.com/0s3suxY.jpg',
+    albumCover:
+      'https://upload.wikimedia.org/wikipedia/en/2/20/Vessel_by_Twenty_One_Pilots.jpg',
     albumSongs: [
       {
         id: 1,
@@ -89,14 +92,15 @@ export const albums: Album[] = [
         songLength: '3:03',
       },
     ],
-    albumReleaseDate: '2013-02-05',
+    albumReleaseDate: '2022-10-21',
   },
   {
     id: 4,
     albumTitle: 'Scaled and Icy',
     albumAuthor: 'Twenty One Pilots',
     albumSlug: 'scaled-and-icy',
-    albumCover: 'https://i.imgur.com/0s3suxY.jpg',
+    albumCover:
+      'https://upload.wikimedia.org/wikipedia/en/5/52/Twenty_One_Pilots_-_Scaled_and_Icy.png',
     albumSongs: [
       {
         id: 1,
@@ -108,6 +112,29 @@ export const albums: Album[] = [
         id: 2,
         songTitle: 'Choker',
         songSlug: 'choker',
+        songLength: '3:23',
+      },
+    ],
+    albumReleaseDate: '2021-05-21',
+  },
+  {
+    id: 5,
+    albumTitle: 'Midnights',
+    albumAuthor: 'Taylor Swift',
+    albumSlug: 'midnights',
+    albumCover:
+      'https://upload.wikimedia.org/wikipedia/en/9/9f/Midnights_-_Taylor_Swift.png',
+    albumSongs: [
+      {
+        id: 1,
+        songTitle: 'Maroon',
+        songSlug: 'maroon',
+        songLength: '3:38',
+      },
+      {
+        id: 2,
+        songTitle: 'Snow at the beach',
+        songSlug: 'snow-at-the-beach',
         songLength: '3:23',
       },
     ],

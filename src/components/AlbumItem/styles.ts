@@ -1,3 +1,4 @@
+import { NavLink } from 'react-router-dom';
 import styled from '@emotion/styled';
 
 export const Album = styled.article`
@@ -30,3 +31,8 @@ export const AlbumTitle = styled.h2``;
 export const AlbumArtist = styled.h3``;
 
 export const AlbumYear = styled.p``;
+
+export const AlbumLink = styled(NavLink)`
+  text-decoration: none;
+  color: black;
+`;

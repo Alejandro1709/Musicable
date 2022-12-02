@@ -1,8 +1,13 @@
 import AlbumItem from '../AlbumItem';
 import { albums } from '../../data/index';
+import type Album from '../../types/album';
 import * as S from './styles';
 
-function Collection() {
+type CollectionTypes = {
+  albums: Album[];
+};
+
+function Collection({ albums }: CollectionTypes) {
   return (
     <S.AlbumsGrid>
       {albums.map((album) => (
