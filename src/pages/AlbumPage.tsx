@@ -1,8 +1,9 @@
 import { useContext } from 'react';
-import { AlbumContext } from '../context/albumContext';
 import { useParams } from 'react-router-dom';
+import { AlbumContext } from '../context/albumContext';
 import Navigator from '../components/Navigator';
 import styled from '@emotion/styled';
+import useAlbums from '../hooks/useAlbums';
 
 const AlbumPageContainer = styled.div`
   display: flex;
@@ -47,7 +48,7 @@ const AlbumListItem = styled.li`
 function AlbumPage() {
   const { albumSlug } = useParams();
 
-  const { initialAlbums } = useContext(AlbumContext);
+  const { initialAlbums } = useAlbums();
 
   const album = initialAlbums.find((album) => album.albumSlug === albumSlug);
 

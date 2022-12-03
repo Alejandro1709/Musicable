@@ -4,6 +4,7 @@ import AppContainer from './components/AppContainer';
 import AlbumsPage from './pages/AlbumsPage';
 import AlbumPage from './pages/AlbumPage';
 import NewAlbumPage from './pages/NewAlbumPage';
+import EditAlbumPage from './pages/EditAlbumPage';
 import styled from '@emotion/styled';
 
 const StyledSection = styled.section`
@@ -20,6 +21,7 @@ function App() {
             <Route path='/' element={<AlbumsPage />} />
             <Route path='/albums/new' element={<NewAlbumPage />} />
             <Route path='/albums/:albumSlug' element={<AlbumPage />} />
+            <Route path='/albums/:albumSlug/edit' element={<EditAlbumPage />} />
             <Route path='*' element={<h1>404 Page Not Found</h1>} />
           </Routes>
         </StyledSection>
