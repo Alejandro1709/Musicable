@@ -1,5 +1,4 @@
-import { useContext } from 'react';
-import { AlbumContext } from '../context/albumContext';
+import useAlbums from '../hooks/useAlbums';
 import Collection from '../components/Collection';
 import Input from '../components/Input';
 import styled from '@emotion/styled';
@@ -19,8 +18,7 @@ const StyledTopHeading = styled.div`
 `;
 
 function AlbumsPage() {
-  const { initialAlbums, filteredAlbums, handleFilterChange } =
-    useContext(AlbumContext);
+  const { initialAlbums, filteredAlbums, handleFilterChange } = useAlbums();
 
   return (
     <>

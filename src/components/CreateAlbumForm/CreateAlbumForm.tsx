@@ -1,6 +1,7 @@
 import React, { useState, useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { AlbumContext } from '../../context/albumContext';
+import useAlbums from '../../hooks/useAlbums';
 import type Album from '../../types/album';
 import Input from '../Input';
 import * as S from './styles';
@@ -13,7 +14,7 @@ function CreateAlbumForm() {
     albumCover: '',
   });
 
-  const { handleCreateAlbum } = useContext(AlbumContext);
+  const { handleCreateAlbum } = useAlbums();
 
   const navigate = useNavigate();
 
