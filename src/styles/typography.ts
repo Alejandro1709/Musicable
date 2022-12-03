@@ -2,7 +2,7 @@ export const fonts = {
   primary: `'Source Sans Pro', sans-serif`,
 };
 
-export const typography = {
+export const typography: any = {
   regular: {
     caption: `
       font-size: 14px;
